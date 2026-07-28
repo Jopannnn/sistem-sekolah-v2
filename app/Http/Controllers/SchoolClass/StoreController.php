@@ -12,6 +12,6 @@ class StoreController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return "class has been stored";
+        return "Melakukan penambahan data kelas";
     }
 }

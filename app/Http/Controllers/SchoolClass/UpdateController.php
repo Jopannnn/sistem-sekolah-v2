@@ -12,6 +12,6 @@ class UpdateController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return "class has been updated";
+        return "Melakukan perubahan data kelas";
     }
 }

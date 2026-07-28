@@ -11,7 +11,7 @@ class MajorController extends Controller
      */
     public function index()
     {
-        return "This is the page to list all majors";
+        return "Menampilkan halaman daftar jurusan";
     }
 
     /**
@@ -19,7 +19,7 @@ class MajorController extends Controller
      */
     public function create()
     {
-        return "This is the page to create a new major";
+        return "Menampilkan halaman tambah jurusan";
     }
 
     /**
@@ -28,7 +28,7 @@ class MajorController extends Controller
     public function store(Request $request)
     {
         // Logika untuk menyimpan data jurusan baru
-        return "Major has been added";
+        return "Melakukan penambahan data jurusan";
     }
 
     /**
@@ -36,7 +36,7 @@ class MajorController extends Controller
      */
     public function show(string $id)
     {
-        return "This is the page to show a major with id: {$id}";
+        return "Menampilkan jurusan dengan ID: {$id}";
     }
 
     /**
@@ -44,7 +44,7 @@ class MajorController extends Controller
      */
     public function edit(string $id)
     {
-        return "This is the page to edit a major with id: {$id}";
+        return "Menampilkan halaman edit jurusan";
     }
 
     /**
@@ -53,7 +53,7 @@ class MajorController extends Controller
     public function update(Request $request, string $id)
     {
         // Logika untuk memperbarui data jurusan
-        return "Major with id: {$id} has been updated";
+        return "Melakukan perubahan data jurusan";
     }
 
     /**
@@ -62,6 +62,6 @@ class MajorController extends Controller
     public function destroy(string $id)
     {
         // Logika untuk menghapus data jurusan
-        return "Major with id: {$id} has been deleted";
+        return "Menghapus data jurusan";
     }
 }

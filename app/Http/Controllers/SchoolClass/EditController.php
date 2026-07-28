@@ -12,6 +12,6 @@ class EditController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return "This is the page to edit a class";
+        return "Menampilkan halaman edit kelas";
     }
 }

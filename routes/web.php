@@ -19,37 +19,37 @@ Route::get('/', function () {
 // management siswa //
 Route::name('students.')->prefix('students')->group(function () {
 
-route::get('/', [StudentController::class, 'index'])->name('index');
-route::get('/create', [StudentController::class, 'create'])->name('create');
-route::post('/', [StudentController::class, 'store'])->name('store');
-route::get('/{id}', [StudentController::class, 'show'])->name('show');
-route::get('/{id}/edit', [StudentController::class, 'edit'])->name('edit');
-route::put('/{id}', [StudentController::class, 'update'])->name('update');
-route::delete('/{id}', [StudentController::class, 'destroy'])->name('destroy');
+    Route::get('/', [StudentController::class, 'index'])->name('index');
+    Route::get('/create', [StudentController::class, 'create'])->name('create');
+    Route::post('/', [StudentController::class, 'store'])->name('store');
+    Route::get('/{id}', [StudentController::class, 'show'])->name('show');
+    Route::get('/{id}/edit', [StudentController::class, 'edit'])->name('edit');
+    Route::put('/{id}', [StudentController::class, 'update'])->name('update');
+    Route::delete('/{id}', [StudentController::class, 'destroy'])->name('destroy');
 });
 
 
 Route::name('teachers.')->prefix('teachers')->group(function () {
 
-route::get('/', [TeacherController::class, 'index'])->name('index');
-route::get('/create', [TeacherController::class, 'create'])->name('create');
-route::post('/', [TeacherController::class, 'store'])->name('store');
-route::get('/{id}', [TeacherController::class, 'show'])->name('show');
-route::get('/{id}/edit', [TeacherController::class, 'edit'])->name('edit');
-route::put('/{id}', [TeacherController::class, 'update'])->name('update');
-route::delete('/{id}', [TeacherController::class, 'destroy'])->name('destroy');
+    Route::get('/', [TeacherController::class, 'index'])->name('index');
+    Route::get('/create', [TeacherController::class, 'create'])->name('create');
+    Route::post('/', [TeacherController::class, 'store'])->name('store');
+    Route::get('/{id}', [TeacherController::class, 'show'])->name('show');
+    Route::get('/{id}/edit', [TeacherController::class, 'edit'])->name('edit');
+    Route::put('/{id}', [TeacherController::class, 'update'])->name('update');
+    Route::delete('/{id}', [TeacherController::class, 'destroy'])->name('destroy');
 });
 
 Route::name('classes.')->prefix('classes')->group(function () {
 
-route::get('/', [IndexController::class, 'index'])->name('index');
-route::get('/create', [CreateController::class, 'create'])->name('create');
-route::post('/', [StoreController::class, 'store'])->name('store');
-route::get('/{id}', [ShowController::class, 'show'])->name('show');
-route::get('/{id}/edit', [EditController::class, 'edit'])->name('edit');
-route::put('/{id}', [UpdateController::class, 'update'])->name('update');
-route::delete('/{id}', [DestroyController::class, 'destroy'])->name('destroy');
+    Route::get('/', [IndexController::class, 'index'])->name('index');
+    Route::get('/create', [CreateController::class, 'create'])->name('create');
+    Route::post('/', [StoreController::class, 'store'])->name('store');
+    Route::get('/{id}', [ShowController::class, 'show'])->name('show');
+    Route::get('/{id}/edit', [EditController::class, 'edit'])->name('edit');
+    Route::put('/{id}', [UpdateController::class, 'update'])->name('update');
+    Route::delete('/{id}', [DestroyController::class, 'destroy'])->name('destroy');
 
 });
 
-Route::resource('students', StudentController::class);
+Route::resource('majors', MajorController::class);
