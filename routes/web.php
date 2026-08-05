@@ -51,7 +51,7 @@ Route::name('teachers.')->prefix('teachers')->group(function () {
     Route::get('/', [TeacherController::class, 'index'])->name('index');
 
     //Halaman Detail Guru
-    Route::get('/{id}', [TeacherController::class, 'show'])->name('show');
+    Route::get('/{id}', [TeacherController::class, 'show'])->name('show')->whereNumber('id');
 
     //Halaman Tambah Guru
     Route::get('/create', [TeacherController::class, 'create'])->name('create');
