@@ -77,7 +77,7 @@ Route::name('classes.')->prefix('classes')->group(function () {
     Route::get('/', IndexController::class)->name('index');
 
     //Halaman Detail School Class
-    Route::get('/{id}', ShowController::class)->name('show');
+    Route::get('/{id}', ShowController::class)->name('show')->whereNumber('id');
 
     //Halaman Tambah School Class
     Route::get('/create', CreateController::class)->name('create');

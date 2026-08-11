@@ -6,7 +6,7 @@
     <div class="mb-8 border-b border-[#E5E3DB] pb-5">
         <a href="#" class="text-xs uppercase tracking-[0.15em] text-slate-400 hover:text-[#A16207]">&larr; Buku
             Induk</a>
-        <h1 class="font-display mt-2 text-3xl font-semibold text-[#16213A]">Ubah Data jurusan</h1>
+        <h1 class="font-display mt-2 text-3xl font-semibold text-[#16213A]">Ubah Data kelas</h1>
         <p class="mt-1 text-sm text-slate-500">Memperbarui catatan atas nama <span class="font-medium text-[#16213A]">Budi
                 Ariyanto</span>.</p>
     </div>
@@ -14,14 +14,14 @@
     <form action="" method="POST" class="space-y-6 border border-[#E5E3DB] bg-white p-8">
         <div>
             <label for="nis"
-                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Nama Jurusan</label>
-            <input type="text" id="name" name="name" value="Teknik komputer dan jaringan"
+                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Nama Kelas</label>
+            <input type="text" id="name" name="name" value="XII AKL 1"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
         </div>
 
         <div>
-            <label for="description" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Deskripsi</label>
-            <input type="text" id="description" name="description" value="Program studi yang mengkhususkan diri dalam bidang teknologi informasi dan jaringan komputer."
+            <label for="name" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Tingkat</label>
+            <input type="text" id="grade" name="grade" value="XII"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
         </div>
 
@@ -30,10 +30,17 @@
                 class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Jurusan</label>
             <select id="major" name="major"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
-                <option value="" selected>TKJ</option>
-                <option value="">AKL</option>
+                <option value="" selected>AKL</option>
+                <option value="">TKJ</option>
                 <option value="">BiD</option>
             </select>
+        </div>
+
+        <div>
+            <label for="nis"
+                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Wali kelas</label>
+            <input type="text" id="homeroom_teacher" name="homeroom_teacher" value="Budi Santoso"
+                class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
         </div>
 
 
