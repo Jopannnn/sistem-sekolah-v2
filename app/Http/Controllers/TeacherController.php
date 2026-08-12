@@ -17,7 +17,7 @@ class teacherController extends Controller
                 'gender' => 'Laki-Laki',
                 'subject' => 'Akuntansi Dasar',
                 'phone' => '081234560001',
-                'status' => 'active',
+                'status' => 'Aktif',
             ],
             [
                 'id' => 2,
@@ -26,7 +26,7 @@ class teacherController extends Controller
                 'gender' => 'Perempuan',
                 'subject' => 'Jaringan Komputer',
                 'phone' => '081234560002',
-                'status' => 'inactive',
+                'status' => 'Tidak Aktif',
             ]
         ];
 
@@ -49,7 +49,8 @@ class teacherController extends Controller
     {
         $title = 'Sistem Sekolah - Detail Guru';
         return view('teachers.show', [
-            'title' => $title
+            'title' => $title,
+            'id' => $id
         ]);
     }
 

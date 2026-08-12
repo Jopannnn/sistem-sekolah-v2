@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Status extends Component
+class StatusBadge extends Component
 {
     public string $status;
 
@@ -17,6 +17,6 @@ class Status extends Component
 
     public function render(): View|Closure|string
     {
-        return view('components.status');
+        return view('components.status-badge');
     }
 }
