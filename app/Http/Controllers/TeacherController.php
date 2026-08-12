@@ -17,7 +17,7 @@ class teacherController extends Controller
                 'gender' => 'Laki-Laki',
                 'subject' => 'Akuntansi Dasar',
                 'phone' => '081234560001',
-                'status' => 'Aktif',
+                'status' => 'active',
             ],
             [
                 'id' => 2,
@@ -26,7 +26,7 @@ class teacherController extends Controller
                 'gender' => 'Perempuan',
                 'subject' => 'Jaringan Komputer',
                 'phone' => '081234560002',
-                'status' => 'Aktif',
+                'status' => 'inactive',
             ]
         ];
 
