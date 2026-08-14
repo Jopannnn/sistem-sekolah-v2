@@ -26,16 +26,6 @@
         </div>
 
         <div>
-            <label for="gender" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Jenis
-                Kelamin</label>
-            <select id="gender" name="gender"
-                class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
-                <option value="L" selected>Laki-laki</option>
-                <option value="P">Perempuan</option>
-            </select>
-        </div>
-
-        <div>
             <label for="major"
                 class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Jurusan</label>
             <select id="major" name="major"
@@ -47,9 +37,9 @@
         </div>
 
         <div>
-            <label for="class"
-                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Kelas</label>
-            <input type="text" id="class" name="class" value="XII AKL 1"
+            <label for="phone"
+                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">No Telpon</label>
+            <input type="text" id="phone" name="phone" value="08123456789"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
         </div>
 
