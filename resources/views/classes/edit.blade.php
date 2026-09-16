@@ -13,34 +13,56 @@
 
     <form action="" method="POST" class="space-y-6 border border-[#E5E3DB] bg-white p-8">
         <div>
-            <label for="nis"
-                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Nama Kelas</label>
+            <label for="nis" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Nama
+                Kelas</label>
             <input type="text" id="name" name="name" value="XII AKL 1"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
         </div>
 
         <div>
-            <label for="name" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Tingkat</label>
-            <input type="text" id="grade" name="grade" value="XII"
+            <label for="grades"
+                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Tingkat</label>
+            <select id="grades" name="grades"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
-        </div>
-
-        <div>
-            <label for="major"
-                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Jurusan</label>
-            <select id="major" name="major"
-                class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
-                <option value="" selected>AKL</option>
-                <option value="">TKJ</option>
-                <option value="">BiD</option>
+                <option value="">Pilih Tingkat</option>
+                <option value="X">X</option>
+                <option value="XI">XI</option>
+                <option value="XII">XII</option>
             </select>
         </div>
 
         <div>
-            <label for="nis"
-                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Wali kelas</label>
-            <input type="text" id="homeroom_teacher" name="homeroom_teacher" value="Budi Santoso"
+            <label for="major_id" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">
+                Jurusan
+            </label>
+
+            <select id="major_id" name="major_id"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
+                <option value="">Pilih jurusan</option>
+
+                @foreach ($majors as $major)
+                    <option value="{{ $major['id'] }}" @selected(old('major_id', $class['major_id']) == $major['id'])>
+                        {{ $major['code'] }} - {{ $major['name'] }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+        <div>
+            <label for="teacher_id" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">
+                Wali Kelas
+            </label>
+
+            <select id="teacher_id" name="teacher_id"
+                class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
+                <option value="">Pilih wali kelas</option>
+
+                @foreach ($teachers as $teacher)
+                    <option value="{{ $teacher['id'] }}" @selected(old('teacher_id', $class['teacher_id']) == $teacher['id'])>
+                        {{ $teacher['name'] }}
+                    </option>
+                @endforeach
+            </select>
         </div>
 
 

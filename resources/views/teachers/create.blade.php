@@ -13,9 +13,9 @@
     <form action="" method="POST" class="space-y-6 border border-[#E5E3DB] bg-white p-8">
 
         <div>
-            <label for="nis"
+            <label for="nip"
                 class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">NIP</label>
-            <input type="text" id="nis" name="nis" placeholder="Contoh: 198501012024"
+            <input type="text" id="nip" name="nip" placeholder="Contoh: 198501012024"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm placeholder:text-slate-400 focus:border-[#A16207] focus:bg-white focus:outline-none">
         </div>
 
@@ -27,22 +27,38 @@
         </div>
 
           <div>
-            <label for="name" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">No Telpon</label>
-            <input type="text" id="name" name="name" placeholder="Nama lengkap Guru"
+            <label for="phone" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">No Telpon</label>
+            <input type="text" id="phone" name="phone" placeholder="Contoh: 08123456789"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm placeholder:text-slate-400 focus:border-[#A16207] focus:bg-white focus:outline-none">
         </div>
 
         <div>
-            <label for="major"
-                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Jurusan</label>
-            <select id="major" name="major"
+            <label for="gender" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Jenis
+                Kelamin</label>
+            <select id="gender" name="gender"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
-                <option value="">Pilih jurusan</option>
-                <option value="">AKL</option>
-                <option value="">TKJ</option>
-                <option value="">BiD</option>
+                <option value="L">Laki-laki</option>
+                <option value="P">Perempuan</option>
             </select>
         </div>
+        
+         <div>
+            <label for="subject" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Mata Pelajaran</label>
+            <input type="text" id="subject" name="subject" placeholder="Mata pelajaran yang diampu"
+                class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm placeholder:text-slate-400 focus:border-[#A16207] focus:bg-white focus:outline-none">
+        </div>
+
+         <div>
+            <label for="status" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Status</label>
+            <select id="status" name="status"
+                class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
+                <option value="active">Aktif</option>
+                <option value="inactive">Tidak Aktif</option>
+            </select>
+        </div>
+
+
+        
 
        
 

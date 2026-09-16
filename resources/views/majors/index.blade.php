@@ -34,10 +34,10 @@
                             {{ $loop->iteration }}
                         </td>
                         <td class="px-5 py-4 font-medium text-[#16213A]">
-                            {{ $major['name'] }}
+                            {{ $major['code'] }}
                         </td>
                         <td class="px-5 py-4">
-                            {{ $major['code'] }}
+                            {{ $major['name'] }}
                         </td>
                         <td class="px-5 py-4">
                             {{ $major['description'] }}

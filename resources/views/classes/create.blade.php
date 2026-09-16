@@ -13,35 +13,56 @@
     <form action="" method="POST" class="space-y-6 border border-[#E5E3DB] bg-white p-8">
 
         <div>
-            <label for="name"
-                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Nama Kelas</label>
+            <label for="name" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Nama
+                Kelas</label>
             <input type="text" id="name" name="name" placeholder="Contoh: XII AKL 1"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm placeholder:text-slate-400 focus:border-[#A16207] focus:bg-white focus:outline-none">
         </div>
 
         <div>
-            <label for="grade" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Tingkat</label>
-            <input type="text" id="grade" name="grade" placeholder="Contoh: XII"
-                class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm placeholder:text-slate-400 focus:border-[#A16207] focus:bg-white focus:outline-none">
-        </div>
-
-        <div>
-            <label for="major"
-                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Jurusan</label>
-            <select id="major" name="major"
+            <label for="grades"
+                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Tingkat</label>
+            <select id="grades" name="grades"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
-                <option value="">Pilih jurusan</option>
-                <option value="">AKL</option>
-                <option value="">TKJ</option>
-                <option value="">BiD</option>
+                <option value="">Pilih Tingkat</option>
+                <option value="">X</option>
+                <option value="">XI</option>
+                <option value="">XII</option>
             </select>
         </div>
 
         <div>
-            <label for="teacher"
-                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Nama Wali Kelas</label>
-            <input type="text" id="teacher" name="teacher" placeholder="Contoh: Budi Santoso"
-                class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm placeholder:text-slate-400 focus:border-[#A16207] focus:bg-white focus:outline-none">
+            <label for="major_id" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">
+                Jurusan
+            </label>
+
+            <select id="major_id" name="major_id"
+                class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
+                <option value="">Pilih jurusan</option>
+
+                @foreach ($majors as $major)
+                    <option value="{{ $major['id'] }}">
+                        {{ $major['code'] }} - {{ $major['name'] }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+        <div>
+            <label for="teacher_id" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">
+                Nama Wali Kelas
+            </label>
+
+            <select id="teacher_id" name="teacher_id"
+                class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
+                <option value="">Pilih wali kelas</option>
+
+                @foreach ($teachers as $teacher)
+                    <option value="{{ $teacher['id'] }}">
+                        {{ $teacher['name'] }}
+                    </option>
+                @endforeach
+            </select>
         </div>
 
 
@@ -52,4 +73,4 @@
                 ke Buku Induk</button>
         </div>
     </form>
-@endsection 
+@endsection

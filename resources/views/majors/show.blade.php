@@ -9,9 +9,9 @@
     <div class="mt-3 border border-[#E5E3DB] bg-white">
         <div class="flex items-start justify-between border-b border-[#E5E3DB] bg-[#FCFBF8] px-8 py-6">
             <div>
-                <p class="mb-1 text-[11px] uppercase tracking-[0.2em] text-[#A16207]">Lembar Siswa</p>
-                <h1 class="font-display text-3xl font-semibold text-[#16213A]">Budi Ariyanto</h1>
-                <p class="mt-1 font-mono text-xs text-slate-500">NIS 2024001</p>
+                <p class="mb-1 text-[11px] uppercase tracking-[0.2em] text-[#A16207]">Lembar Jurusan</p>
+                <h1 class="font-display text-3xl font-semibold text-[#16213A]">Teknik Komputer dan Jaringan</h1>
+                <p class="mt-1 font-mono text-xs text-slate-500">Kode: TKJ</p>
             </div>
             <a href="#"
                 class="bg-[#16213A] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#26324f]">Ubah</a>
