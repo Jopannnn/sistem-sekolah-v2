@@ -20,14 +20,14 @@
         </div>
 
         <div>
-            <label for="grades"
+            <label for="grade"
                 class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Tingkat</label>
-            <select id="grades" name="grades"
+            <select id="grade" name="grade"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
                 <option value="">Pilih Tingkat</option>
-                <option value="">X</option>
-                <option value="">XI</option>
-                <option value="">XII</option>
+                <option value="X">X</option>
+                <option value="XI">XI</option>
+                <option value="XII">XII</option>
             </select>
         </div>
 
