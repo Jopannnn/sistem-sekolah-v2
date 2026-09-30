@@ -10,26 +10,9 @@ class StudentController extends Controller
     public function index()
     {
         $title = 'Sistem Sekolah - Daftar Siswa';
-        $students = [
-            [
-                'id' => 1,
-                'nis' => '2024001',
-                'name' => 'digga',
-                'class' => 'XII TKJ 3',
-                'major' => 'TKJ'
 
-
-            ],
-
-            [
-                'id' => 2,
-                'nis' => '2024002',
-                'name' => 'Rizky',
-                'class' => 'XII AKL',
-                'major' => 'AKL'
-            ]
-        ];
-
+        $students = Student::all();
+        
         return view('students.index', [
             'title' => $title,
             'students' => $students
@@ -54,7 +37,7 @@ class StudentController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+        $validatedRequest = $request->validate([
             'nis' => ['required', 'string', 'size:4', 'unique:students,nis'],
             'name' => ['required', 'string'],
             'gender' => ['required', 'string', 'in:Laki-laki,Perempuan'],
@@ -62,14 +45,10 @@ class StudentController extends Controller
             'class' => ['required', 'string']
         ]);
 
-        $student = new Student();
-        $student->nis = $request->nis;
-        $student->name = $request->name;
-        $student->gender = $request->gender;
-        $student->major = $request->major;
-        $student->class = $request->class;
-        $student->save();
+        //Tambahkan ke database
+        Student::create($validatedRequest);
 
+        //handle if success
         return redirect()->route('students.index');
     }
 
