@@ -11,19 +11,21 @@ class StudentController extends Controller
     {
         $title = 'Sistem Sekolah - Daftar Siswa';
 
-        $students = Student::all();
-        
+        $students = Student::select('id', 'nis', 'name', 'class', 'major')->get();
+
         return view('students.index', [
             'title' => $title,
             'students' => $students
         ]);
     }
 
-    public function show($id)
+    public function show(Student $student)
     {
         $title = 'Sistem Sekolah - Detail Siswa';
+    
         return view('students.show', [
-            'title' => $title
+            'title' => $title,
+            'student' => $student
         ]);
     }
 
@@ -52,24 +54,35 @@ class StudentController extends Controller
         return redirect()->route('students.index');
     }
 
-    public function edit($id)
+    public function edit(Student $student)
     {
         $title = 'Sistem Sekolah - Edit Siswa';
         return view('students.edit', [
-            'title' => $title
+            'title' => $title,
+            'student' => $student
         ]);
     }
 
-    public function update(Request $request, $id)
+    public function update(Student $student, Request $request)
     {
-        // Logika untuk memperbarui data siswa
-        return "Melakukan perubahan data siswa";
+      $validatedRequest = $request->validate([
+            'nis' => ['required', 'string', 'size:4', 'unique:students,nis,' . $student->id],
+            'name' => ['required', 'string'],
+            'gender' => ['required', 'string', 'in:Laki-laki,Perempuan'],
+            'major' => ['required', 'string', 'in:AKL,TKJ,BiD'],
+            'class' => ['required', 'string']
+        ]);
+
+        $student->update($validatedRequest);
+
+        return redirect()->route('students.index');
     }
 
-    public function destroy($id)
+    public function destroy(Student $student)
     {
-        // Logika untuk menghapus data siswa
-        return "Menghapus data siswa";
+            $student->delete();
+            return redirect()->route('students.index');
+            
     }
 
 }

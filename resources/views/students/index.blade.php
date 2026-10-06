@@ -30,7 +30,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($students as $student)
+                @forelse ($students as $student)
                     <tr class="border-b border-[#EFEDE6] hover:bg-[#FAF9F5]">
                         <td class="px-5 py-4 font-display text-lg text-[#A16207]">
                             {{ $loop->iteration }}
@@ -49,17 +49,27 @@
                         </td>
                         <td class="px-5 py-4">
                             <div class="flex justify-end gap-4 text-xs font-medium">
-                                <a href="{{ route('students.show', ['id' => $student->id]) }}" class="text-[#16213A] hover:text-[#A16207]">Lihat</a>
-                                <a href="{{ route('students.edit', ['id' => $student->id]) }}" class="text-[#16213A] hover:text-[#A16207]">Ubah</a>
-                                <form action="{{ route('students.destroy', ['id' => $student->id]) }}" method="POST"
+                                <a href="{{ route('students.show', ['student' => $student->id]) }}" class="text-[#16213A] hover:text-[#A16207]">Lihat</a>
+                                <a href="{{ route('students.edit', ['student' => $student->id]) }}" class="text-[#16213A] hover:text-[#A16207]">Ubah</a>
+                                <form action="{{ route('students.destroy', ['student' => $student->id]) }}" method="POST"
                                     onsubmit="return confirm('Hapus data siswa ini dari buku induk?')">
+                                    @csrf
+                                    @method('DELETE')
 
                                     <button type="submit" class="text-red-700 hover:text-red-900">Hapus</button>
                                 </form>
                             </div>
                         </td>
                     </tr>
-                @endforeach
+                @empty
+                    <tr>
+                        <td colspan="6" class="px-5 py-4 text-center text-sm text-slate-500">
+                            Data siswa tidak tersedia.
+                        </td>
+                    </tr>
+                @endforelse
+                
+
             </tbody>
         </table>
     </div>
