@@ -9,15 +9,24 @@ use App\Models\Student;
 
 class StudentController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $title = 'Sistem Sekolah - Daftar Siswa';
+        
+        $search = $request->query('search');
+        $class = $request->query('class');
+        $major = $request->query('major');
 
-        $students = Student::select('id', 'nis', 'name', 'class', 'major')->get();
+        $students = Student::select('id', 'nis', 'name', 'class', 'major')->paginate(10);
+
+        $schoolClasses = ['10 AKL', '11 AKL', '11 TKJ 1', '11 TKJ 2', '10 BiD', '12 TKJ 1', '12 TKJ 2', '12 TKJ 3'];
+        $majors = ['AKL', 'TKJ', 'BiD'];
 
         return view('students.index', [
             'title' => $title,
-            'students' => $students
+            'students' => $students,
+            'schoolClasses' => $schoolClasses,
+            'majors' => $majors
         ]);
     }
 
