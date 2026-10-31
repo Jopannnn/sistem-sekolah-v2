@@ -12,12 +12,25 @@ class StudentController extends Controller
     public function index(Request $request)
     {
         $title = 'Sistem Sekolah - Daftar Siswa';
-        
+
         $search = $request->query('search');
         $class = $request->query('class');
         $major = $request->query('major');
 
-        $students = Student::select('id', 'nis', 'name', 'class', 'major')->paginate(10);
+        $students = Student::select('id', 'nis', 'name', 'class', 'major')
+            
+            ->when($search, function($query,$search) {
+                $query->where(function($query) use ($search) {
+                    $query->where('name', 'like', "%{$search}%")
+                            ->orWhere('nis', 'like', "%{$search}%");
+                });
+            })
+
+            ->when($class, fn($query, $class)=>$query->where('class', '=', $class))
+            ->when($major, fn($query, $major)=>$query->where('major', '=', $major))
+            
+            ->paginate(10)
+            ->withQueryString();
 
         $schoolClasses = ['10 AKL', '11 AKL', '11 TKJ 1', '11 TKJ 2', '10 BiD', '12 TKJ 1', '12 TKJ 2', '12 TKJ 3'];
         $majors = ['AKL', 'TKJ', 'BiD'];
@@ -33,7 +46,7 @@ class StudentController extends Controller
     public function show(Student $student)
     {
         $title = 'Sistem Sekolah - Detail Siswa';
-    
+
         return view('students.show', [
             'title' => $title,
             'student' => $student
@@ -70,7 +83,7 @@ class StudentController extends Controller
 
     public function update(Student $student, UpdateRequest $request)
     {
-      $validatedRequest = $request->validated();
+        $validatedRequest = $request->validated();
 
         $student->update($validatedRequest);
 
@@ -79,9 +92,9 @@ class StudentController extends Controller
 
     public function destroy(Student $student)
     {
-            $student->delete();
-            return redirect()->route('students.index');
-            
+        $student->delete();
+        return redirect()->route('students.index');
+
     }
 
 }
